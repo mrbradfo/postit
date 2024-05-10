@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="845b89b0-3335-4889-a274-3444e2a15d82" name="Changes" comment="Add Spring Boot to project">
+    <list default="true" id="845b89b0-3335-4889-a274-3444e2a15d82" name="Changes" comment="Add hot reload dependency">
+      <change afterPath="$PROJECT_DIR$/sample.env.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/postit/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/postit/controllers/UserController.java" afterDir="false" />
     </list>
@@ -97,12 +103,23 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/nikitapryymak/projects/java/postit",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/postit" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="PostitApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.postit.PostitApp" />
@@ -169,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715011156835</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add hot reload dependency">
+      <option name="closed" value="true" />
+      <created>1715013450797</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715013450797</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,6 +223,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing git from IntelliJ" />
     <MESSAGE value="Add Spring Boot to project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Spring Boot to project" />
+    <MESSAGE value="Add hot reload dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add hot reload dependency" />
   </component>
 </project>
