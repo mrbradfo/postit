@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="845b89b0-3335-4889-a274-3444e2a15d82" name="Changes" comment="Add hot reload dependency">
-      <change afterPath="$PROJECT_DIR$/sample.env.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="845b89b0-3335-4889-a274-3444e2a15d82" name="Changes" comment="Add Spring Data JPA package to connect to database. Create User repository &amp; model.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/exceptions/ApiError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/exceptions/AppError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/exceptions/AppExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/postit/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/postit/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/postit/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/postit/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/postit/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/postit/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/postit/repositories/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +53,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -94,22 +100,22 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build postit.executor": "Run",
-    "Gradle.postit [:Main.main()].executor": "Run",
-    "Gradle.postit [:PostitApp.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/nikitapryymak/projects/java/postit",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "advanced.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build postit.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.postit [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.postit [:PostitApp.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nikitapryymak/projects/java/postit&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -126,7 +132,7 @@
       <module name="postit-server.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.postit.controllers.*" />
+          <option name="PATTERN" value="org.postit.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -194,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715013450797</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add Spring Data JPA package to connect to database. Create User repository &amp; model.">
+      <option name="closed" value="true" />
+      <created>1715363755961</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715363755961</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +238,7 @@
     <MESSAGE value="testing git from IntelliJ" />
     <MESSAGE value="Add Spring Boot to project" />
     <MESSAGE value="Add hot reload dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add hot reload dependency" />
+    <MESSAGE value="Add Spring Data JPA package to connect to database. Create User repository &amp; model." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Spring Data JPA package to connect to database. Create User repository &amp; model." />
   </component>
 </project>

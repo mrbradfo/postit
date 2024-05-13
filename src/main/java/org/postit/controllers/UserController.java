@@ -1,24 +1,36 @@
 package org.postit.controllers;
 
+import jakarta.validation.Valid;
 import org.postit.models.User;
-import org.postit.repositories.UserRepository;
+import org.postit.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
-@RequestMapping(path="/users")
+@RequestMapping(path = "/users")
 public class UserController {
     @Autowired
-    private UserRepository userRepository;
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
 
     @GetMapping()
     public @ResponseBody Iterable<User> getUsers() {
-        return userRepository.findAll();
+        return userService.getUsers();
+    }
+
+    @GetMapping("/{id}")
+    public @ResponseBody User getUserById(@PathVariable("id") int id) {
+        return userService.getUserById(id);
     }
 
     @PostMapping()
-    public @ResponseBody User createUser(@RequestBody User user) {
-        return userRepository.save(user);
+    public @ResponseBody User createUser(@Valid @RequestBody User user) {
+        return userService.createUser(user);
     }
 
 }

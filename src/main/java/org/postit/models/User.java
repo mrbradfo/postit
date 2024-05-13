@@ -1,6 +1,8 @@
 package org.postit.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
@@ -11,9 +13,12 @@ public class User {
 
     @Basic(optional=false)
     @Column(unique=true)
+    @NotBlank(message = "Username is required")
     private String username;
 
     @Basic(optional=false)
+    @NotBlank(message = "Email is required")
+    @Email(message = "Please provide a valid email address")
     private String email;
 
     public int getId() {
